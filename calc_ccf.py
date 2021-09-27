@@ -156,7 +156,7 @@ def cp_dist_from_params(mult, total_cn, alt_cnt, ref_cnt, purity, grid_size=101)
     ccf_bins = np.linspace(0, 1, grid_size)
 
     # Since transformation is linear, ToV formula not necessary
-    ccf_domain_in_af_space = ccf_bins * mult / (total_cn * purity + 2 * (1 - purity))
+    cp_domain_in_af_space = ccf_bins * mult / (total_cn * purity + 2 * (1 - purity))
     
     ccf_dist = scipy.stats.beta.pdf(ccf_domain_in_af_space, alt_cnt + 1, ref_cnt + 1)
     return ccf_dist / sum(ccf_dist)
